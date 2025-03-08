@@ -4,5 +4,5 @@ class Numeros {//creamos una clase
     }
 }
 
-const obj   = new Numeros();//agregamos 
-obj.suma(10,2); 
+const obj   = new Numeros();//agregamosa la clase como un objeto
+console.log(obj.suma(10,3)); //Le pasamos la el objeto suma
