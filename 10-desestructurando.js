@@ -1,4 +1,4 @@
-const lstNotasYAlumnos  = [['Daniela','Lucas','Alvaro','Valeria'],[9,8.5,9.5,10]];
+const lstNotasYAlumnos  = [['Daniela','Lucas','Alvaro','Valeria'],[9,8.5,9.5,10], [], []];
 const [lstAlumnos, lstNotas, ...resto]    = lstNotasYAlumnos;//Para desestructurar un arreglo colocamos corchetes, con los puntos colocamos el resto
 
 console.log(lstAlumnos);
