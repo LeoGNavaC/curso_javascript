@@ -7,3 +7,5 @@ for (let i = 0; i < lstNotas.length; i++) {
 
 const mediaAritmetica   = sumaNotas/lstNotas.length;
 console.log(`La suma de la media aritmetica es ${mediaAritmetica.toFixed(2)}`);//toFixed es para solos dos decimales
+
+
