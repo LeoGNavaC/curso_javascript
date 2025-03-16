@@ -8,4 +8,4 @@ for (let nota of lstNotas) { // con esto me ahorro todo el conteo y colocar hast
 
 const valorMedio    = sumaNotas / lstNotas.length;
 
-console.log(`Sacanado la media de los datos con for of: `, valorMedio.toFixed(2));
+console.log(`Sacando la media de los datos con for of: `, valorMedio.toFixed(2));
