@@ -1,0 +1,182 @@
+[
+    {
+        "nombre": "Sofia",
+        "edad": 31,
+        "email": "sofia@gmail.com",
+        "telefonos": [
+            "55 1234 5678",
+            "55 4323 4353"
+        ],
+        "direccion": {
+            "calle": "Avenida Reforma",
+            "numero": 222,
+            "pais": "Mexico",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Pedro",
+        "edad": 17,
+        "email": "pedro@gmail.com",
+        "telefonos": [
+            "55 3534 6364",
+            "55 8423 7424"
+        ],
+        "direccion": {
+            "calle": "Insurgentes sur",
+            "numero": 624,
+            "pais": "Mexico",
+            "apartamento": false
+        }
+    },
+    {
+        "nombre": "Mariana",
+        "edad": 31,
+        "email": "mariana@gmail.com",
+        "telefonos": [
+            "54 8563 0562",
+            "54 0055 6354"
+        ],
+        "direccion": {
+            "calle": "Avenida Hipolito Yrigoyen",
+            "numero": 2463,
+            "pais": "Argentina",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Marcos",
+        "edad": 43,
+        "email": "marcos@gmail.com",
+        "telefonos": [
+            "51 6345 6345",
+            "51 9073 9454"
+        ],
+        "direccion": {
+            "calle": "Avenida Alfonso Ugarte",
+            "numero": 848,
+            "pais": "Peru",
+            "apartamento": false
+        }
+    },
+    {
+        "nombre": "Andrea",
+        "edad": 74,
+        "email": "andrea@gmail.com",
+        "telefonos": [
+            "51 1234 5678",
+            "51 4323 4353"
+        ],
+        "direccion": {
+            "calle": "Avenida Primero de Mayo",
+            "numero": 3285,
+            "pais": "Peru",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Miguel",
+        "edad": 31,
+        "email": "miguel@gmail.com",
+        "telefonos": [
+            "506 6542 9467",
+            "506 7564 0455"
+        ],
+        "direccion": {
+            "calle": "San Gerardo",
+            "numero": 218,
+            "pais": "Costa Rica",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Jose",
+        "edad": 33,
+        "email": "jose@gmail.com",
+        "telefonos": [
+            "506 1234 5678",
+            "506 4323 4353"
+        ],
+        "direccion": {
+            "calle": "Sabanilla",
+            "numero": 11502,
+            "pais": "Costa Rica",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Monica",
+        "edad": 27,
+        "email": "monica@gmail.com",
+        "telefonos": [
+            "57 1234 5678",
+            "57 4323 4353"
+        ],
+        "direccion": {
+            "calle": "Cl. 116 #55-1",
+            "numero": 234,
+            "pais": "Colombia",
+            "apartamento": false
+        }
+    },
+    {
+        "nombre": "Elizabeth",
+        "edad": 54,
+        "email": "elizabeth@gmail.com",
+        "telefonos": [
+            "57 7565 8756",
+            "57 8534 0707"
+        ],
+        "direccion": {
+            "calle": "Carrera 6",
+            "numero": 222,
+            "pais": "Colombia",
+            "apartamento": true
+        }
+    },
+    {
+        "nombre": "Fernando",
+        "edad": 65,
+        "email": "fernando@gmail.com",
+        "telefonos": [
+            "593 6334 8764",
+            "593 1236 9564"
+        ],
+        "direccion": {
+            "calle": "4to Pasaje 1",
+            "numero": 42,
+            "pais": "Ecuador",
+            "apartamento": false
+        }
+    },
+    {
+        "nombre": "Harland",
+        "edad": 27,
+        "email": "harland@gmail.com",
+        "telefonos": [
+            "55 6456 7456",
+            "55 3245 3467"
+        ],
+        "direccion": {
+            "calle": "Calle 15",
+            "numero": 4,
+            "pais": "Mexico",
+            "apartamento": false
+        }
+    },
+    {
+        "nombre": "Zaira",
+        "edad": 56,
+        "email": "zaira@gmail.com",
+        "telefonos": [
+            "55 4564 7654",
+            "55 7452 8756"
+        ],
+        "direccion": {
+            "calle": "Circuito interior",
+            "numero": 745,
+            "pais": "Mexico",
+            "apartamento": true
+        }
+    }
+]
