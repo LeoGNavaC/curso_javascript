@@ -1,26 +1,4 @@
-//vamos a obtener el precio mas bajo de los que tenemos en el array
-const listaPrecios  = [
-    {
-        nombre: "PHP",
-        precio: 20,
-    },
-    {
-        nombre: "Python",
-        precio: 25,
-    },
-    {
-        nombre: "Javascript",
-        precio: 30,
-    },
-    {
-        nombre: "Java",
-        precio: 15,
-    },
-    {
-        nombre: "Goland",
-        precio: 35,
-    }
-];
+const listaPrecios  = require('./data');
 
 // console.log(listaPrecios.length); //para verificar si funciona y si es un objeto, pero dentro de un array
 let menor = 0;
