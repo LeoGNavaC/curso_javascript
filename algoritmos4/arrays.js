@@ -1,4 +1,4 @@
-const lstLibreria   = [
+const listaLibros   = [
     {
         nombre: "c++",
         valor: 25
@@ -45,4 +45,4 @@ const lstLibreria   = [
     }
 ];
 
-module.exports  =  lstLibreria;
+module.exports  = {listaLibros};

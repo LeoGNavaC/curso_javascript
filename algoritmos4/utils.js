@@ -1,7 +1,7 @@
 const listaLibros    = require('./arrays.js');
 
 function encontrarMenores(pivote,array) {
-    let menores = 0;
+    let menores = 0;//son indices, ayudan a recorrer el array que se tenia
     const posicionPivote    = array.indexOf(pivote);
 
     for (let i = 0;i < array.length;i++){
@@ -36,4 +36,6 @@ function dividePorPivote(array) {
     return array;
 };
 
-console.log(dividePorPivote(listaLibros));
+// console.log(dividePorPivote(listaLibros));
+
+module.exports  = { cambiarLugar };
