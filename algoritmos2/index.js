@@ -1,3 +1,4 @@
+//en este juntamos dos listas en una
 const listaPrecios = require('../algoritmos/data.js');
 const {edtPlaneta, edtSuperTecno}   = require('./arrays.js');
 
