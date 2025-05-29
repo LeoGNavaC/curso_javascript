@@ -1,5 +1,4 @@
-import chalk from 'chalk';
-
+/*
 console.log(chalk.red('Hello world!'));
 
 console.log("Hola mundo");
@@ -18,4 +17,35 @@ de la API mozGetAsFile() en un [HTMLCanvasElement](https://
 developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
 
 [Prueba code 400](https://httpstat.us/404)
-[Gato salchicha](http://gatosalchica.com.mx/)`);
+[Gato salchicha](http://gatosalchica.com.mx/)`);*/
+
+import fs from "fs";//propiedad de js
+import chalk from 'chalk';
+import { error } from "console";
+
+function manejarError (error) {
+    console.log(error);//maneja el error como un objeto en este caso
+    throw new Error(chalk.red(error));//con esto recibe el error y lo realizamos con una nueva instancia 
+}
+
+//comunicacion sincrono
+function cargarArchivo(rutaArchivo) {
+    const encoding  = "utf-8";
+    fs.promises.readFile(rutaArchivo,encoding)
+    .then((texto) => console.log(chalk.green(texto)))/*Ayuda a mostrar el contenido */
+    .catch((error) => manejarError(error));
+}
+
+cargarArchivo("texto.md");
+
+//cargara el camino o el Path
+// function cargarArchivo(rutaArchivo) {
+//     const encoding  = "utf-8";
+//     fs.readFile(rutaArchivo, encoding, (error, texto) => {
+//         //stacktrace, donde se aparecio este error
+//         if (error) {
+//             manejarError(error);//si tiene un error lo va a mandar a llamar
+//         }
+//          console.log(chalk.green(texto));//esto imprime el contenido de texto.md
+//     });
+// }
