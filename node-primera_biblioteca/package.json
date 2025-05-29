@@ -1,0 +1,16 @@
+{
+    "name": "Creando primera biblioteca JSON",
+    "version": "0.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "Harland Lohora",
+    "license": "ISC",
+    "dependencies": {
+        "chalk": "^5.4.1"
+    },
+    "type": "module"
+}
