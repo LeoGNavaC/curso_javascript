@@ -26,17 +26,26 @@ import { error } from "console";
 function manejarError (error) {
     console.log(error);//maneja el error como un objeto en este caso
     throw new Error(chalk.red(error));//con esto recibe el error y lo realizamos con una nueva instancia 
-}
+};
 
-//comunicacion sincrono
-function cargarArchivo(rutaArchivo) {
-    const encoding  = "utf-8";
-    fs.promises.readFile(rutaArchivo,encoding)
-    .then((texto) => console.log(chalk.green(texto)))/*Ayuda a mostrar el contenido */
-    .catch((error) => manejarError(error));
-}
+//con esta palabra reservada async se le indica que es asincrono 
+async function cargarArchivo(rutaArchivo) {
+    try {
+        const encoding  = "utf-8";
+        const texto = await fs.promises.readFile(rutaArchivo,encoding);
+        console.log(chalk.green(texto));
+    } catch(error) {
+        manejarError(error);
+    };
+};
 
-cargarArchivo("texto.md");
+// //comunicacion sincrono
+// function cargarArchivo(rutaArchivo) {
+//     const encoding  = "utf-8";
+//     fs.promises.readFile(rutaArchivo,encoding)
+//     .then((texto) => console.log(chalk.green(texto)))/*Ayuda a mostrar el contenido */
+//     .catch((error) => manejarError(error));
+// };
 
 //cargara el camino o el Path
 // function cargarArchivo(rutaArchivo) {
@@ -48,4 +57,6 @@ cargarArchivo("texto.md");
 //         }
 //          console.log(chalk.green(texto));//esto imprime el contenido de texto.md
 //     });
-// }
+// };
+
+cargarArchivo("texto.md");
