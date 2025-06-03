@@ -1,27 +1,19 @@
-/*
-console.log(chalk.red('Hello world!'));
-
-console.log("Hola mundo");
-
-console.log(`La interfas File nos proporciona informacion relacionada a archivos
-que permite a JavaScript poder acceder a su contenido.
-
-Son generalmente generados a partir de un objeto [FileList](https://
-developer.mozilla.org/en-US/docs/Web/API/FileList), el cual es el
-resultado de la seleccion del archivo dado por el a traves el
-elemento input[<input>](https://developer.mozilla.org/en-US/docs/
-Web/HTML/Element/Input), a partir del objeto [DataTransfer](https://
-developer.mozilla.org/en-US/docs/Web/API/DataTransfer) utilizado en
-operaciones Drag and Drop o en español Arrastrar y Soltar o a partir 
-de la API mozGetAsFile() en un [HTMLCanvasElement](https://
-developer.mozilla.org/en-US/docs/Web/API/Canvas_API).
-
-[Prueba code 400](https://httpstat.us/404)
-[Gato salchicha](http://gatosalchica.com.mx/)`);*/
-
 import fs from "fs";//propiedad de js
 import chalk from 'chalk';
 import { error } from "console";
+
+const textoPrueba   = `Son generalmente generados a partir de un objeto [FileList](https://developer.mozilla.org/en-US/docs/Web/API/FileList), el cual es el resultado de la seleccion del archivo dado por el a traves el elemento input[<input>](https://developer.mozilla.org/en-US/docs/ Web/HTML/Element/Input), a partir del objeto [DataTransfer](https://developer.mozilla.org/en-US/docs/Web/API/DataTransfer) utilizado en operaciones Drag and Drop o en español Arrastrar y Soltar o a partir de la API mozGetAsFile() en un [HTMLCanvasElement](https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API).`;
+
+function obtenerEnlaces(texto) {
+    const regex = /\[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm /*exprecion regular y el gm se usa para una busqueda global y multilinia*/
+    const enlace    = [...texto.matchAll(regex)];
+    const resultados    = enlace.map( enlace => ({[enlace[1]]: enlace[2]}));
+
+    return resultados;
+    //console.log(resultados);
+}
+
+obtenerEnlaces(textoPrueba);
 
 function manejarError (error) {
     console.log(error);//maneja el error como un objeto en este caso
@@ -31,13 +23,20 @@ function manejarError (error) {
 //con esta palabra reservada async se le indica que es asincrono 
 async function cargarArchivo(rutaArchivo) {
     try {
+        var comentario    = "hola mundo";
         const encoding  = "utf-8";
         const texto = await fs.promises.readFile(rutaArchivo,encoding);
-        console.log(chalk.green(texto));
+        const resultados    = obtenerEnlaces(texto);
+        
+        console.log(resultados);
     } catch(error) {
         manejarError(error);
+    } finally {
+        console.log(chalk.blue(`Operacion finalizada ${comentario}`));
     };
 };
+
+cargarArchivo("texto.md");
 
 // //comunicacion sincrono
 // function cargarArchivo(rutaArchivo) {
@@ -59,4 +58,6 @@ async function cargarArchivo(rutaArchivo) {
 //     });
 // };
 
-cargarArchivo("texto.md");
+// \[[^[\]]*?\] -- expresion regular para atrapar solo las etiquetas
+// \(https?:\/\/[^\s?#.].[^\s]*\) -- expresion regular para atrapar los links 
+// \[([^[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\) -- con esta expresion solo tomamos los nombres de las etiquetas que estan dentro
