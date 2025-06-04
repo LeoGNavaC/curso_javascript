@@ -13,7 +13,7 @@ function obtenerEnlaces(texto) {
     //console.log(resultados);
 }
 
-obtenerEnlaces(textoPrueba);
+//obtenerEnlaces(textoPrueba);
 
 function manejarError (error) {
     console.log(error);//maneja el error como un objeto en este caso
@@ -28,7 +28,8 @@ async function cargarArchivo(rutaArchivo) {
         const texto = await fs.promises.readFile(rutaArchivo,encoding);
         const resultados    = obtenerEnlaces(texto);
         
-        console.log(resultados);
+        return resultados.length !== 0 ? resultados : chalk.red("No se encontraron enlaces");
+        //console.log(resultados);
     } catch(error) {
         manejarError(error);
     } finally {
@@ -36,7 +37,7 @@ async function cargarArchivo(rutaArchivo) {
     };
 };
 
-cargarArchivo("texto.md");
+export default cargarArchivo;//estamos exportando toda la funcion
 
 // //comunicacion sincrono
 // function cargarArchivo(rutaArchivo) {
