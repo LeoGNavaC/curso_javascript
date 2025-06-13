@@ -1,19 +1,31 @@
 ﻿import chalk from "chalk";
 import cargarArchivo from "./index.js";
 import fs from "fs";
+import validarEnlaces from "./http-valid.js";
 
 const camino   = process.argv;
 
-function mostrarDatos(datos, archivo) {
-    console.log(
-        chalk.yellow("Lista de enlaces: "), 
-        chalk.black.bgGreenBright(archivo),
-        datos
-    );
+function mostrarDatos(validar,datos, archivo) {
+    if(validar) {
+        console.log(
+            chalk.green("Validacion de enlaces: "),
+            chalk.black.bgGreenBright(archivo),
+            validarEnlaces(datos)
+        );
+    } else {
+        console.log(
+            chalk.yellow("Lista de enlaces: "), 
+            chalk.black.bgGreenBright(archivo),
+            datos
+        );
+    }
 }
 
 async function procesarTexto(argumentos) {
     const camino    = argumentos[2];
+    const validar   = argumentos[3] === "--validar"; //estamos tomando la bandera, son estas: --validate
+
+    //console.log(validar);
 
     try {
         fs.lstatSync(camino)//leemos el contenido de los argumentos
@@ -26,7 +38,7 @@ async function procesarTexto(argumentos) {
     if (fs.lstatSync(camino).isFile()) {
         //console.log(chalk.yellowBright(`Lo que estas abriendo es el archivo: ${camino}`));
         const enlaces = await cargarArchivo(camino);
-        mostrarDatos(enlaces, camino);        
+        mostrarDatos(validar, enlaces, camino);        
     } else if (fs.lstatSync(camino).isDirectory()) {
         console.log(chalk.redBright(`Lo que estas abriendo es el directorio: ${camino}`));
         
@@ -37,7 +49,7 @@ async function procesarTexto(argumentos) {
             //console.log(`${camino}${nombreArchivo}`); //obtenemos el camino que recorre, la ruta como si no movieramos en el CMD
             const enlaces   = await cargarArchivo(`${camino}${nombreArchivo}`);
             //console.log(`La ruta del archivo es: ${camino}${nombreArchivo}`);
-            mostrarDatos(enlaces, nombreArchivo);
+            mostrarDatos(validar, enlaces, nombreArchivo);
         })
     }
 }
