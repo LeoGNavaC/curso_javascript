@@ -1,1 +1,0 @@
-La interfaz File nos proporciona información relacionado a archivos que permite a JavaScript poder acceder a su contenido.
