@@ -22,7 +22,7 @@ const admin = {
 
 Object.setPrototypeOf(admin,usuario);//con esto le indico que puedo traer un protpotipo de los metodos que tiene el otro objeto
 
-admin.__proto__;
+//admin.__proto__;
 
 admin.crearCurso();
 admin.mostrarDatos();
