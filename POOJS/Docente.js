@@ -9,7 +9,7 @@ export default class Docente extends Usuario{
         console.log("¡¡¡¡¡¡Estudiante aprovador!!!!!, felicidades");
     };
 
-    mostrarDatos(){
+    mostrarDatos(){//esto es polimorfismo
         return `Los datos son: ${this.nombre}, ${this.email}`;
     }
 };
